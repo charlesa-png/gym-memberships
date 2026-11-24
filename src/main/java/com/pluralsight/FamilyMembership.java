@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
+import java.math.RoundingMode;
 
 public class FamilyMembership extends Membership {
     private int extraMembers;
@@ -23,9 +23,10 @@ public class FamilyMembership extends Membership {
     public BigDecimal getMonthlyPrice() {
        BigDecimal regularPrice = getBaseRate().add(new BigDecimal("12.50").multiply(new BigDecimal(getExtraMembers())));
         if (new BigDecimal(getExtraMembers()).compareTo(new BigDecimal("3"))>=0){
-            BigDecimal newPrice = new BigDecimal("0");
-            newPrice = newPrice.subtract(regularPrice.divide(new BigDecimal("100").multiply(new BigDecimal("10"))));
-            return newPrice;
+            BigDecimal newPrice;
+            BigDecimal discount = regularPrice.divide(new BigDecimal("100")).multiply(new BigDecimal("10"));
+            newPrice = regularPrice.subtract(discount);
+            return newPrice.setScale(2, RoundingMode.HALF_UP);
         }
         return regularPrice;
     }
