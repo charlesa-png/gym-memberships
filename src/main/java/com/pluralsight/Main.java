@@ -14,8 +14,13 @@ public class Main {
         BigDecimal allContracts = new BigDecimal("0.00");
 
         System.out.println("=== Gym Memberships ===");
-        Membership regularMembership = new Membership("Henry Clark", 3, new BigDecimal("30.00"));
-        memberships.add(regularMembership);
+
+        // 'Membership' is abstract; cannot be instantiated
+        //Membership regularMembership = new Membership("Henry Clark", 3, new BigDecimal("30.00"));
+        //memberships.add(regularMembership);
+
+
+
 //        System.out.println(titleLine + "\n\n" + regularMembership);
         BasicMembership aBasicMembership = new BasicMembership("Alice Johnson", 6, new BigDecimal("30.00"), true);
         BasicMembership bBasicMembership = new BasicMembership("Bob Smith", 2, new BigDecimal("27.50"), false);
@@ -46,14 +51,14 @@ public class Main {
         System.out.println("\n--- Totals ---\n");
         System.out.println("Memberships: " + memberships.size());
         System.out.println("\nMonthly income: $" + monthlyIncome);
-        System.out.println("All contracts: $" + allContracts);
+        System.out.println("\nAll contracts: $" + allContracts);
 
         System.out.println("\n--- Front desk notes ---\n");
 
         for (Membership membership : memberships) {
             if (membership instanceof BasicMembership){
                 if(((BasicMembership) membership).isOffPeakOnly()){
-                    System.out.println("\n" + membership.getMemberName() + ": entry between 10:00 and 16:00 only\n");
+                    System.out.println(membership.getMemberName() + ": entry between 10:00 and 16:00 only\n");
                 }
             }
         }
