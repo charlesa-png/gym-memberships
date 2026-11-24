@@ -27,4 +27,10 @@ public class BasicMembership extends Membership{
         }
         return super.getMonthlyPrice();
     }
+
+    @Override
+    public String toString() {
+        String string = "Basic | " + getMemberName() + " | Months: " + getMonths() + " | Off-peak only: " + isOffPeakOnly();
+        return string;
+    }
 }

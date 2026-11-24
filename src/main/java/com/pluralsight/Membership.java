@@ -53,5 +53,8 @@ public class Membership {
         return total;
     }
 
-
+    public String toString() {
+        String string = "Membership | " + getMemberName() + " | Months: " + getMonths();
+        return super.toString();
+    }
 }

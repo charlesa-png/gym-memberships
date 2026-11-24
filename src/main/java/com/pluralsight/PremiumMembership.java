@@ -42,4 +42,10 @@ public class PremiumMembership extends Membership {
         }
         return super.getSignUpFee();
     }
+
+    @Override
+    public String toString() {
+        String string = "Premium | " + getMemberName() + " | Months: " + getMonths() + " | Guest passes: " + getGuestPasses();
+        return string;
+    }
 }

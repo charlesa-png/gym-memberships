@@ -30,4 +30,10 @@ public class FamilyMembership extends Membership {
         }
         return regularPrice;
     }
+
+    @Override
+    public String toString() {
+        String string = "Family | " + getMemberName() + " | Months: " + getMonths() + " | Extra members: " + getExtraMembers();
+        return string;
+    }
 }
