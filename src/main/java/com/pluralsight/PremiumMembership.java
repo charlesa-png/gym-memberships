@@ -23,7 +23,7 @@ public class PremiumMembership extends Membership {
 
     @Override
     public BigDecimal getMonthlyPrice() {
-        return super.getMonthlyPrice().add(new BigDecimal("18.50"));
+        return getBaseRate().add(new BigDecimal("18.50"));
     }
 
     public void useGuestPass(){

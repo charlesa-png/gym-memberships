@@ -39,9 +39,7 @@ public abstract class Membership {
         this.baseRate = baseRate;
     }
 
-    public BigDecimal getMonthlyPrice(){
-        return baseRate;
-    }
+    public abstract BigDecimal getMonthlyPrice();
 
     public BigDecimal getSignUpFee(){
         BigDecimal signUpFee = new BigDecimal("49.00");
