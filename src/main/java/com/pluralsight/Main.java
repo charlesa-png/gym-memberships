@@ -51,7 +51,7 @@ public class Main {
         System.out.println("\n--- Totals ---\n");
         System.out.println("Memberships: " + memberships.size());
         System.out.println("\nMonthly income: $" + monthlyIncome);
-        System.out.println("\nAll contracts: $" + allContracts);
+        System.out.println("\nAll contracts: $" + allContracts + "\n");
 
         System.out.println("\n--- Front desk notes ---\n");
 
