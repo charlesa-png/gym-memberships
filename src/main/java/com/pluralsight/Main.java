@@ -43,6 +43,10 @@ public class Main {
             allContracts = allContracts.add(membership.getContractTotal());
         }
 
+        System.out.println("\n--- Totals ---\n");
+        System.out.println("Memberships: " + memberships.size());
+        System.out.println("\nMonthly income: $" + monthlyIncome);
+        System.out.println("All contracts: $" + allContracts);
 
         System.out.println("\n--- Front desk notes ---\n");
 
@@ -63,10 +67,10 @@ public class Main {
         System.out.println(gFamilyMembership.getMemberName() + ": print " + gPlusOne + " key cards\n");
         System.out.println(eFamilyMembership.getMemberName() + ": print " + ePlusOne + " key cards\n");
 
-        System.out.println("\n--- Totals ---\n");
-        System.out.println("Memberships: " + memberships.size());
-        System.out.println("\nMonthly income: $" + monthlyIncome);
-        System.out.println("All contracts: $" + allContracts);
+        System.out.println("\n--- Kinds ---\n");
+        for (Membership membership : memberships) {
+            System.out.println(membership.getMemberName() + ": " + membership.getClass().getSimpleName() + "\n");
+        }
         }
 
     }
